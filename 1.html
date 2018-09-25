@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<title> Properties javascript : clientX/clientY example </title>
+	<title> Properties javascript : ctrlKey </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">  
 	<script type="text/javascript" src="vendor/bootstrap.js"></script>
@@ -9,17 +9,14 @@
 	<link rel="stylesheet" href="vendor/font-awesome.css">
  	<link rel="stylesheet" href="1.css">
 </head>
-<body onmousedown="showCoords(event)">
- <script>
-      function showCoords(evt){
-        alert(
-          "clientX value: " + evt.clientX + "\n" +
-          "clientY value: " + evt.clientY + "\n"
-        );
-      }
-    </script>
-    <p>To display the mouse coordinates click anywhere on the page.</p>
-
-<button onmouseup="whichButton(event);" oncontextmenu="event.preventDefault();">Click with mouse...</button>
+<body >
+	<script type="text/javascript">
+		document.addEventListener('click', function(e) {
+  			console.log('Is Control key pressed?', e.ctrlKey);
+		})
+	</script>
+	<p>
+		Click anywhere on the page and open your developer console to see the results.
+	</p>
 </body>
 </html>
