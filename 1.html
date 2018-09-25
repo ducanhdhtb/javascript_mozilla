@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<title> Properties javascript </title>
+	<title> Properties javascript :button </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">  
 	<script type="text/javascript" src="vendor/bootstrap.js"></script>
@@ -10,16 +10,35 @@
  	<link rel="stylesheet" href="1.css">
 </head>
 <body >
- <script type="text/javascript">
-	document.addEventListener('click', function(e) {
-  	console.log('Is Alt/Option key pressed?', e.altKey);
-})
-</script>
-</head>
+<script>
+var whichButton = function (e) {
+    // Handle different event models
+    var e = e || window.event;
+    var btnCode;
 
-<body>
-<p>
-Click anywhere on the page and open your developer console to see the results.
-</p>
+    if ('object' === typeof e) {
+        btnCode = e.button;
+
+        switch (btnCode) {
+            case 0:
+                console.log('Left button clicked.');
+            break;
+
+            case 1:
+                console.log('Middle button clicked.');
+            break;
+
+            case 2:
+                console.log('Right button clicked.');
+            break;
+
+            default:
+                console.log('Unexpected code: ' + btnCode);
+        }
+    }
+}
+</script>
+
+<button onmouseup="whichButton(event);" oncontextmenu="event.preventDefault();">Click with mouse...</button>
 </body>
 </html>
