@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<title> Properties javascript : ctrlKey </title>
+	<title> Properties javascript : offsetX  </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">  
 	<script type="text/javascript" src="vendor/bootstrap.js"></script>
@@ -10,18 +10,8 @@
  	<link rel="stylesheet" href="1.css">
 </head>
 <body >
-	<!-- The MouseEvent.metaKey read-only property returning a Boolean that indicates if the Meta key was pressed (true) or not (false) when the event occured.
-	Note: On Macintosh keyboards, this is the command key (⌘). On Windows keyboards, this is the windows key (⊞) -->
 	<script>
-		function goInput(e) {
- // checks metaKey and
-	   if (e.metaKey) {
-	        // passes event along
-	     superSizeOutput(e);
-	   } else {
-	     doOutput(e);
-	   }
- 	}
+		var xOffset = instanceOfMouseEvent.offsetX;
 	</script>
 </body>
 </html>
