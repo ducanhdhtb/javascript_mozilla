@@ -10,13 +10,18 @@
  	<link rel="stylesheet" href="1.css">
 </head>
 <body >
-	<script type="text/javascript">
-		document.addEventListener('click', function(e) {
-  			console.log('Is Control key pressed?', e.ctrlKey);
-		})
+	<!-- The MouseEvent.metaKey read-only property returning a Boolean that indicates if the Meta key was pressed (true) or not (false) when the event occured.
+	Note: On Macintosh keyboards, this is the command key (⌘). On Windows keyboards, this is the windows key (⊞) -->
+	<script>
+		function goInput(e) {
+ // checks metaKey and
+	   if (e.metaKey) {
+	        // passes event along
+	     superSizeOutput(e);
+	   } else {
+	     doOutput(e);
+	   }
+ 	}
 	</script>
-	<p>
-		Click anywhere on the page and open your developer console to see the results.
-	</p>
 </body>
 </html>
